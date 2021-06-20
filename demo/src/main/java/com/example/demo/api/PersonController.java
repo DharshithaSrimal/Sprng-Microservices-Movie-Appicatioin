@@ -29,7 +29,17 @@ public class PersonController {
     }
 
     @GetMapping(path = "{id}")
-    public Person getPersonById(@PathVariable UUID id){ return personService.getPersonById(id)
+    public Person getPersonById(@PathVariable("id") UUID id){ return personService.getPersonById(id)
     .orElse(null);
+    }
+
+    @DeleteMapping(path = "{id}")
+    public void deletePersonById(@PathVariable("id") UUID id){
+        personService.detetePersonById(id);
+    }
+
+    @PutMapping(path = "{id}")
+    public void updatePersonById(@PathVariable UUID id, @RequestBody Person person){
+        personService.updatePersonById(id, person);
     }
 }
