@@ -3,6 +3,8 @@ package com.example.demo.api;
 import com.example.demo.service.PersonService;
 import com.example.demo.model.Person;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.NonNull;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,7 +21,7 @@ public class PersonController {
     }
 
     @PostMapping
-    public void addPerson(@RequestBody Person person){
+    public void addPerson(@NonNull @RequestBody Person person){
         personService.addPerson(person);
     }
 

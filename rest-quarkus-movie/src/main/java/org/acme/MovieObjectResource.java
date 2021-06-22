@@ -32,7 +32,7 @@ public class MovieObjectResource {
         return Response.ok(movies).build();
     }
 
-    @PUT
+    /*@PUT
     @Path("{id}/{title}")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
@@ -62,5 +62,5 @@ public class MovieObjectResource {
             return Response.noContent().build();
         }
         return Response.status(Response.Status.BAD_REQUEST).build();
-    }
+    }*/
 }
